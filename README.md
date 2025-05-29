@@ -1,5 +1,7 @@
 # socket_ps_parallel_train
 
+[![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/LihanChen2004/socket_ps_parallel_train)
+
 基于Socket通信的分布式参数服务器（Parameter Server, PS）架构，支持多Worker节点的数据并行训练。用于 SMBU 并行与分布式计算课程大作业。
 
 ## 目录结构
@@ -30,7 +32,7 @@
 ### 1. 安装依赖
 
 ```bash
-pip install torch torchvision matplotlib plotly
+uv sync
 ```
 
 ### 2. 配置参数
@@ -42,20 +44,7 @@ pip install torch torchvision matplotlib plotly
 以4个Worker为例：
 
 ```bash
-python run_experiment.py 4
-```
-
-或手动启动：
-
-```bash
-# 启动参数服务器
-python parameter_server.py 4
-
-# 分别启动4个Worker（可用不同终端）
-python worker.py 0 4
-python worker.py 1 4
-python worker.py 2 4
-python worker.py 3 4
+uv run run_experiment.py 4
 ```
 
 ### 4. 查看结果
